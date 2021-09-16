@@ -16,8 +16,8 @@ export class AdminComponent implements OnInit {
   constructor(public formService:FormService,private route: ActivatedRoute,private loginservice:LoginService,private router:Router) { 
 
   }
-  admindata:any=[];
-  userdata:any=[];
+  admindata:Observable<userdetails>[]=[];
+  userdata:Observable<userdetails>[]=[];
   ngOnInit() {
     this.path=this.router.url.split('/');
     console.log(this.path.length,this.router.url);
