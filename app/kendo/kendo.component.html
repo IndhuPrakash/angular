@@ -1,0 +1,68 @@
+<p>Date Picker</p>
+<kendo-datepicker format="dd/MM/yyyy HH:mm" [value]="value" [min]="min" [max]="max" [weekNumber]="true">
+  <ng-template kendoCalendarWeekNumberCellTemplate let-context="cellContext">
+    <span class="weeknumber-cell">{{context.formattedValue}}</span>
+  </ng-template>
+</kendo-datepicker>
+<br><br>
+<p>Date Input</p>
+<kendo-dateinput format="dd/MM/yyyy HH:mm:ss a" [value]="value1"></kendo-dateinput>
+<br><br>
+<div>{{items|json}}</div>
+<!--<div class="container-fluid">
+  <kendo-sortable
+    [kendoSortableBinding]="items"
+    [navigable]="true"
+    [animation]="true"
+    class="row"
+    itemClass="item col-xs-6 col-sm-3"
+    activeItemClass="item col-xs-6 col-sm-3 active"
+  >
+  </kendo-sortable>
+</div>-->
+<br>
+<kendo-menu [items]="menu"> </kendo-menu>
+<div class="example-wrapper">
+  <p>Select an item:</p>
+  <kendo-multiselecttree
+  kendoMultiSelectTreeExpandable
+  [kendoMultiSelectTreeHierarchyBinding]="listitems"
+  kendoMultiSelectTreeSummaryTag
+  [childrenField]="'items'"
+  [textField]="'text'"
+  [valueField]="'value'"
+  [(ngModel)]="initial"
+  [expandedKeys]="['0']"
+  class="furniture"
+  *ngIf="length(initial)"
+  style="width: 500px;"
+  >
+  </kendo-multiselecttree>
+  <kendo-multiselecttree
+  kendoMultiSelectTreeExpandable
+  [kendoMultiSelectTreeHierarchyBinding]="listitems"
+  [childrenField]="'items'"
+  [textField]="'text'"
+  [valueField]="'value'"
+  class="furniture"
+  [(ngModel)]="initial"
+  *ngIf="!length(initial)"
+  style="width: 500px;"
+></kendo-multiselecttree>
+</div>
+<div>
+  <kendo-grid [data]="gridData" [height]="220">
+    <kendo-grid-column field="id" title="ID" width="40">
+    </kendo-grid-column>
+    <kendo-grid-column field="name" title="Name" width="250">
+    </kendo-grid-column>
+    <kendo-grid-column field="gender" title="Gender">
+    </kendo-grid-column>
+    <kendo-grid-column field="email" title="email">
+    </kendo-grid-column>
+  </kendo-grid>
+  <button (click)="add()">add</button>
+</div>
+<br>
+<br>
+<div>End</div>

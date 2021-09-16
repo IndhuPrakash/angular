@@ -1,0 +1,263 @@
+.top{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%; 
+    //border:2px solid white;
+    padding: 10px;
+    background-color: black;
+    text-align: left;
+    color:white;
+}
+.main{
+    padding-left: 100px;padding-right: 100px;
+}
+.icons{
+    color:white;
+    font-size:15px;
+    float:right;
+}
+.search a{
+    position: absolute;
+}
+.search{
+    //width:100%;
+    float:right;
+    position: relative;
+}
+.icon{
+    padding: 10px;
+    min-width: 40px;
+}
+.search input[type=text],.sel{
+    padding:6px;
+    width: 400px;
+    border: none;
+    outline: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    background-color: white;;
+}
+.btn,.btn1{
+    border: none;
+    outline: none;
+    background-color:rgb(240, 240, 240);
+    font-size: 15px;
+    padding: 10px 35px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.btn:link,.btn1:link{
+    text-decoration: none;
+}
+.btn:visited,.btn1:visited{
+    text-decoration: underline;
+    color: blue;
+}
+.btn:hover,.btn1:hover{
+    //text-decoration: underline;
+    color: blue;
+}
+.up{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 10px 35px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+th,td{
+    border-bottom: 1px solid gray;
+    text-align: left;
+    padding: 8px;
+}
+.container{
+    width:100%
+}
+#leftside{
+    padding-right: 15px;
+    width:50%;
+    display: inline-block;
+}
+#rightside{
+    width:50%;
+    float: right;
+}
+.bottom{
+    position: fixed;
+    bottom:0;
+    right:0;
+}
+.bottom button{
+    border: none;
+    outline: none;
+    padding: 10px;
+    width:120px;
+}
+ul{
+    list-style-type: none;
+
+}
+li{
+    display: inline-block;
+}
+li a{
+    padding-right:10px;
+    color: black;
+    background-color:rgb(240, 240, 240);
+}
+
+li a:hover,.active{
+    color:blue;
+    text-decoration: underline;
+}
+*{
+    background-color:rgb(240, 240, 240);
+}
+
+.dropbtn {
+    background-color:white;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    text-align: left;
+    outline: none;
+}
+.dropdown {
+    position: static;;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: white;
+    color:black;
+}
+
+#first{
+    width: 30px;
+    height: 30px;
+    background-color:green;
+    text-align: center;
+    color: white;
+}
+
+tr:hover,.highlight:hover {
+    background-color:white;
+}
+tr:hover td {
+    background-color: transparent; /* or #000 */
+}
+tr:hover td a {
+    background-color: transparent; /* or #000 */
+}
+.edit_hover_class button{
+    visibility:hidden;
+}
+.edit_hover_class:hover button{
+    float: right;
+    background-color: white;
+    visibility:visible;
+}
+.bg{
+    border: none;
+    outline: none;
+    background-color: white;
+    font-size:20px;padding: 10px 10px;
+    //margin-right: 10px;
+}
+.bg:hover,.active1{
+    height: 100%;
+    //width: 10px;
+    //width:10px;height: 10px;
+    border: none;
+    outline: none;
+    background-color:rgb(230, 230, 230);
+    cursor: pointer;
+    //border: solid 2px gray;
+    //padding: 10px 10px;
+}
+.up{
+    background-color: white;
+    display: inline-block;
+}
+.new{
+    width:50%;
+    background-color: blue;
+    border: none;
+    outline: none;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    width: 100px;
+    height: 45px;    
+}
+
+
+@media screen and (max-width:1200px){
+    .main{
+        padding: 10px;
+    }
+    .search{
+        width: 100%;
+    }
+    .btn{
+        padding-left: 0px;
+        padding-bottom:10px;
+        display: inline-block;
+        margin: 10px 0 0 0;
+        width: 50%;
+    }
+    .bg{
+        font-size: 3vw;
+        padding:1% 1%;
+    }
+    .up{
+        font-size: 2.5vw;
+    }
+    .new{
+        font-size: 2.5vw;
+    }
+    .btn1{
+        font-size: 3vw;
+        padding-left: 0px;
+        padding-bottom:10px;
+        display: inline-block;
+        margin: 10px 0 0 0;
+        width: 25%;
+    }
+    #leftside{
+        width: 100%;
+    }
+    #rightside{
+        width:100%;
+    }
+
+}

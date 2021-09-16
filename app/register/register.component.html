@@ -1,0 +1,39 @@
+<div style="text-align:center">
+  <h1>Registration</h1><br>
+  <button type="submit" class="btn btn-primary" (click)="reset()">Reset</button><br><br> 
+  <form (ngSubmit)="onSubmit(userform)" #userform="ngForm">
+    <div class="form-group">
+      <label for="name" style="width:140px">Name</label>
+      <input type="text" id="name" name="name" required [(ngModel)]="user.name" #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="errormessage">Name is required</div>
+    </div>
+    <div class="form-group">
+      <label for="username" style="width:140px">User Name</label>
+      <input type="text" id="username" name="username" required [(ngModel)]="user.username" #username="ngModel">
+      <div *ngIf="username.invalid && (username.dirty || username.touched)" class="errormessage">Username is required</div>
+      <div *ngFor="let data of userdata">
+        <div *ngIf="data.username==username.value" class="errormessage">
+            This username is already exist
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password" style="width:140px">Password</label>
+      <input type="password" id="password" name="password" required [(ngModel)]="user.password" #password="ngModel">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="errormessage">Password is required</div>
+      <div *ngFor="let data of userdata">
+        <div *ngIf="data.password==password.value" class="errormessage">
+            This Password is already exist
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Sign up</button>
+    </div>
+  </form>
+  <div>If you have an account please Log in
+    <button type="submit" class="btn btn-primary" routerLink="../login">Sign in</button>
+  </div>
+</div>

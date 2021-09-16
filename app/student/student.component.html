@@ -1,0 +1,141 @@
+<div [hidden]="!disable">
+  <button type="submit" class="btn btn-primary" (click)="add()">Add Student</button>&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="sortByName()">Sort By Name</button>&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="sortByTotal()">Sort By Total</button>&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="sub1Topper()">Sub1 Topper</button>&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="sub2Fail()">Sub2 Fail list</button>&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="cse()">CSE</button>&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="eee()">EEE</button>&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="mech()">MECH</button>&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="ece()">ECE</button>&nbsp;
+  <br>
+  <div *ngIf="no">
+    <div>Number of Students : {{total}}</div>
+    <div>Number Of Passed Student : {{pass}}</div>
+    <div>Number Of Failed Students : {{fail}}</div>
+  </div>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Department</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentdata">
+        <td>{{student.name}}</td>
+        <td>{{student.dob}}</td>
+        <td>{{student.gender}}</td>
+        <td>{{student.dept}}</td>
+        <td>
+          <button type="submit" class="btn btn-primary" (click)="edit(student)">Edit</button>&nbsp;
+          <button type="submit" class="btn btn-primary" (click)="delete(student)">Delete</button>&nbsp;
+          <button type="submit" class="btn btn-primary" (click)=viewResult(student)>View Results</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<br><br>
+  <button type="submit" class="btn btn-primary" (click)="passStudents()">Pass Students list</button>&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="failStudents()">Fail Students list</button>&nbsp;
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Department</th>
+        <th>Sub1</th>
+        <th>Sub2</th>
+        <th>Sub3</th>
+        <th>Sub4</th>
+        <th>Sub5</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of filterstudent">
+        <td>{{student.name}}</td>
+        <td>{{student.dob}}</td>
+        <td>{{student.gender}}</td>
+        <td>{{student.dept}}</td>
+        <td [style.color]="lessthan(student.sub1)?'red':'black'">{{student.sub1}}</td>
+        <td [style.color]="lessthan(student.sub2)?'red':'black'">{{student.sub2}}</td>
+        <td [style.color]="lessthan(student.sub3)?'red':'black'">{{student.sub3}}</td>
+        <td [style.color]="lessthan(student.sub4)?'red':'black'">{{student.sub4}}</td>
+        <td [style.color]="lessthan(student.sub5)?'red':'black'">{{student.sub5}}</td>
+        <td>
+          <button type="submit" class="btn btn-primary" (click)="edit(student)">Edit</button>&nbsp;
+          <button type="submit" class="btn btn-primary" (click)="delete(student)">Delete</button>&nbsp;
+          <button type="submit" class="btn btn-primary" (click)=viewResult(student)>View Results</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div [hidden]="disable">
+  <button class="btn btn-primary" (click)="view()">View Student</button>&nbsp;<br>
+  <form (ngSubmit)="onSubmit(studentform)" #studentform="ngForm" style="text-align: center;">
+    <div class="form-group">
+      <label for="name" style="width:140px">User Name</label>
+      <input type="text" id="name" name="name" required [(ngModel)]="student.name" #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="errormessage">Enter name</div>
+    </div>
+    <div class="form-group">
+      <label for="dob" style="width:140px">DOB</label>
+      <input type="date" id="dob" name="dob" required [(ngModel)]="student.dob" #dob="ngModel">
+    </div>
+    <div class="form-group">
+      <label style="width:140px">Gender</label>&nbsp;
+      <label for="male">Male</label>
+      <input type="radio" id="male" value="male" name="gender" [(ngModel)]="student.gender">
+      <label for="female">Female</label>
+      <input type="radio" id="female" value="female" name="gender" [(ngModel)]="student.gender">
+    </div>
+    <div class="form-group">
+      <label for="dept" style="width:140px">Department</label>
+      <input type="text" id="dept" name="dept" required [(ngModel)]="student.dept" #dept="ngModel">
+    </div>
+    <div>
+    </div>
+    <div class="form-group">
+      <label for="sub1" style="width:140px">Subject 1 Mark</label>
+      <input type="number" id="sub1" name="sub1" min="0" max="100" required [(ngModel)]="student.sub1" #sub1="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="sub2" style="width:140px">Subject 2 Mark</label>
+      <input type="number" id="sub2" name="sub2" min="0" max="100" required [(ngModel)]="student.sub2" #sub2="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="sub3" style="width:140px">Subject 3 Mark</label>
+      <input type="number" id="sub3" name="sub3" min="0" max="100" required [(ngModel)]="student.sub3" #sub3="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="sub4" style="width:140px">Subject 4 Mark</label>
+      <input type="number" id="sub4" name="sub4" min="0" max="100" required [(ngModel)]="student.sub4" #sub4="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="sub5" style="width:140px">Subject 5 Mark</label>
+      <input type="number" id="sub5" name="sub5" min="0" max="100" required [(ngModel)]="student.sub5" #sub5="ngModel">
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary" [disabled]="studentform.invalid">Submit</button>&nbsp;
+    </div>
+  </form>
+</div>
+
+<div [hidden]="result">
+  <div>Student Name : {{resultdata.name}}</div>
+  <div>Student dob : {{resultdata.dob}}</div>
+  <div>Subject 1 : {{grade.sub1}}</div>
+  <div>Subject 2 : {{grade.sub2}}</div>
+  <div>Subject 3 : {{grade.sub3}}</div>
+  <div>Subject 4 : {{grade.sub4}}</div>
+  <div>Subject 5 : {{grade.sub5}}</div>
+</div>
