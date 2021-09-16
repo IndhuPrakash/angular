@@ -1,0 +1,221 @@
+{
+  "student": [
+    {
+      "id": 0,
+      "name": "prakash",
+      "dob": "1999-10-06",
+      "gender": "male",
+      "dept": "cse",
+      "sub1": 90,
+      "sub2": 80,
+      "sub3": 70,
+      "sub4": 60,
+      "sub5": 50,
+      "total": 350,
+      "avg": 70
+    },
+    {
+      "name": "sathish",
+      "dob": "1996-04-14",
+      "gender": "male",
+      "dept": "mech",
+      "sub1": 67,
+      "sub2": 78,
+      "sub3": 54,
+      "sub4": 45,
+      "sub5": 80,
+      "total": 324,
+      "avg": 64.8,
+      "id": 1
+    },
+    {
+      "name": "anushya",
+      "dob": "1997-10-16",
+      "gender": "female",
+      "dept": "eee",
+      "sub1": 87,
+      "sub2": 32,
+      "sub3": 76,
+      "sub4": 93,
+      "sub5": 56,
+      "total": 344,
+      "avg": 68.8,
+      "id": 2
+    },
+    {
+      "name": "samy",
+      "dob": "1970-10-25",
+      "gender": "male",
+      "dept": "ece",
+      "sub1": 69,
+      "sub2": 24,
+      "sub3": 97,
+      "sub4": 50,
+      "sub5": 63,
+      "total": 303,
+      "avg": 60.6,
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "latha",
+      "dob": "1999-10-06",
+      "gender": "female",
+      "dept": "cse",
+      "sub1": 90,
+      "sub2": 80,
+      "sub3": 70,
+      "sub4": 60,
+      "sub5": 50,
+      "total": 350,
+      "avg": 70
+    },
+    {
+      "name": "mari muthu",
+      "dob": "1996-04-14",
+      "gender": "male",
+      "dept": "mech",
+      "sub1": 67,
+      "sub2": 78,
+      "sub3": 54,
+      "sub4": 45,
+      "sub5": 80,
+      "total": 324,
+      "avg": 64.8,
+      "id": 5
+    },
+    {
+      "name": "dinesh",
+      "dob": "1997-10-16",
+      "gender": "male",
+      "dept": "eee",
+      "sub1": 87,
+      "sub2": 32,
+      "sub3": 76,
+      "sub4": 93,
+      "sub5": 56,
+      "total": 344,
+      "avg": 68.8,
+      "id": 6
+    },
+    {
+      "name": "jk",
+      "dob": "1970-10-25",
+      "gender": "male",
+      "dept": "ece",
+      "sub1": 69,
+      "sub2": 78,
+      "sub3": 97,
+      "sub4": 50,
+      "sub5": 63,
+      "total": 303,
+      "avg": 60.6,
+      "id": 7
+    }
+  ],
+  "user": [
+    {
+      "id": 0,
+      "name": "prakash",
+      "username": "prakash18",
+      "password": "prakash123"
+    },
+    {
+      "name": "Indhu Prakash P",
+      "username": "indhu18",
+      "password": "indhu123",
+      "id": 1
+    },
+    {
+      "name": "ab",
+      "username": "ab18",
+      "password": "ab123",
+      "id": 2
+    },
+    {
+      "name": "samy",
+      "username": "samy26",
+      "password": "samy456",
+      "id": 3
+    },
+    {
+      "name": "abc",
+      "username": "abc18",
+      "password": "abc123",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "muthup",
+      "username": "muthup03",
+      "password": "muthup987"
+    },
+    {
+      "id": 6,
+      "name": "sathishp",
+      "username": "sathishp03",
+      "password": "sathishp987"
+    },
+    {
+      "name": "abcd",
+      "username": "abcd18",
+      "password": "abcd123",
+      "id": 7
+    }
+  ],
+  "admin": [
+    {
+      "id": 0,
+      "name": "muthu",
+      "username": "muthu03",
+      "password": "muthu987"
+    },
+    {
+      "id": 1,
+      "name": "sathish",
+      "username": "sathish03",
+      "password": "sathish987"
+    },
+    {
+      "id": 2,
+      "name": "indhu",
+      "username": "indhu03",
+      "password": "indhu987"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "commentId": 2
+    },
+    {
+      "id": 2,
+      "title": "test",
+      "author": "typicode",
+      "commentId": 1
+    },
+    {
+      "id": 3,
+      "title": "tests",
+      "author": "typicods",
+      "commentId": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 3
+    },
+    {
+      "id": 2,
+      "body": "comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

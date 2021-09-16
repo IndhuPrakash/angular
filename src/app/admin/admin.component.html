@@ -1,0 +1,14 @@
+<div style="text-align:center">
+  <h1>Admin Page</h1><br>
+  <h3>Admin Name : {{admindata.name|uppercase}}</h3>
+</div>
+<div *ngIf="list">
+  <button (click)="addUser()" class="btn btn-primary">Add User</button>
+  <h4>Users List</h4>
+  <div *ngFor="let user of userdata">
+    <a style="color: blue;cursor: pointer;" (click)="showDetails(user.id)">=>&nbsp;&nbsp;{{user.name}}</a>
+  </div><br><br>
+</div>
+
+<router-outlet></router-outlet>
+<button class="btn btn-primary" routerLink="/login" (click)="logout()">Log Out</button>

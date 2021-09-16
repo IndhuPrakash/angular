@@ -1,0 +1,47 @@
+<div>
+  <h1>Add Users</h1><br>
+  <form (ngSubmit)="onSubmit(userform)" #userform="ngForm">
+    <div class="form-group">
+      <label for="name" style="width:140px">Name</label>
+      <input type="text" id="name" name="name" required [(ngModel)]="user.name" #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="errormessage">Name is required</div>
+    </div>  
+    <div class="form-group">
+      <label for="username" style="width:140px">User Name</label>
+      <input type="text" id="username" name="username" required [(ngModel)]="user.username" #username="ngModel">
+      <div *ngIf="username.invalid && (username.dirty || username.touched)" class="errormessage">Username is required</div>
+      <div *ngIf="action!='edit'">
+        <div *ngFor="let data of userdata">
+          <div *ngIf="data.username==username.value" class="errormessage">
+            This username is already exist
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password" style="width:140px">Password</label>
+      <input type="password" id="password" name="password" required [(ngModel)]="user.password" #password="ngModel">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="errormessage">Password is required</div>
+      <div *ngIf="action!='edit'">
+        <div *ngFor="let data of userdata">
+          <div *ngIf="data.password==password.value" class="errormessage">
+            This Password is already exist
+          </div>
+        </div>
+       </div>
+    </div>
+    <div *ngIf="errormessage=='user'" class="errormessage">Username Already Exist</div>
+    <div *ngIf="errormessage=='pass'" class="errormessage">Password Already Exist</div>
+    <div *ngIf="errormessage=='userpass'" class="errormessage">Username And Password Already Exist</div>
+    <div *ngIf="action!='edit'">
+      <button type="submit" class="btn btn-primary">Add</button><br><br> 
+    </div>
+    <div *ngIf="action=='edit'">
+      <button type="submit" class="btn btn-primary">Save</button><br><br> 
+    </div>
+  </form>
+  <div>
+    <button type="submit" class="btn btn-primary" (click)="back()">cancel</button><br><br> 
+  </div>
+
+</div>

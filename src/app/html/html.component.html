@@ -1,0 +1,144 @@
+<div class="top" >
+  <i class="fa fa-reorder" style="color:white;font-size:25px;background-color: black;"></i>&nbsp;
+  Office 365
+  <div class="icons" style="background-color: black;">
+    <i class="fa fa-bell-o" style="background-color: black;"></i>&nbsp;
+    <i class="fa fa-gear" style="background-color: black;"></i>&nbsp;
+    <i class="fa fa-question-circle" style="background-color: black;"></i>
+  </div>
+</div>
+<br><br>
+<div class="main">
+  <br>
+  <div>
+    <h1 style="display: inline-block;">Good Morning</h1>
+    <div class="search" style="background-color: white;display: inline-block;margin: auto;background-color: rgb(240, 240, 240);">
+      <i class="fa fa-search icon" style="color:lightblue;font-size:20px;background-color: white;margin-top: 10px;"></i>
+      <input type="text" placeholder="Search Online Documents" style="background-color: white;padding:10px;text-align: center;">
+    </div>
+  </div>
+
+  <div>
+    <h2 style="display: inline-block;">Apps</h2>
+    <div style="float:right">
+      <div class="dropdown" style="margin: 10%;">
+        <button class="dropbtn" style="text-align: center;">Install Office Apps<i class='fa fa-angle-down' style="background-color: white;"></i></button>
+        <div class="dropdown-content">
+        <a href="#"><i class='fa fa-arrow-down'></i>Office 2016</a>
+        <a href="#"><i class='fa fa-arrow-right'></i>Other Install Options</a>
+        </div>
+      </div>  
+    </div>
+  </div>
+
+  <div class="apps" style="padding: 20px;">
+    <button class="btn highlight"><img src="https://img.icons8.com/color/30/000000/ms-outlook.png"/>Outlook</button>
+    <button class="btn highlight"><img src="https://img.icons8.com/color/48/000000/skydrive.png"/>OneDrive</button>
+    <button class="btn highlight"><img src="https://img.icons8.com/color/48/000000/ms-word.png"/>Word</button>
+    <button class="btn highlight"><img src="https://img.icons8.com/color/48/000000/ms-excel.png"/>Excel</button>
+    <button class="btn highlight"><img src="https://img.icons8.com/color/48/000000/ms-powerpoint--v1.png"/>PowerPoint</button>  
+    <button class="btn highlight"><img src="https://img.icons8.com/color/50/000000/microsoft-teams.png"/>Teams</button>
+    <button class="btn highlight"><img src="https://img.icons8.com/color/48/000000/microsoft-yammer-2019.png"/>Yammer</button>
+    <button class="btn highlight"><img src="https://img.icons8.com/color/48/000000/dynamics-365.png"/>Dynamics 365</button>
+    <button class="btn highlight"><img src="https://img.icons8.com/fluency/48/000000/serial-tasks.png"/>Flow</button>
+    <button class="btn highlight"><img src="https://img.icons8.com/fluency/48/000000/office-365-admin.png"/>Admin</button>  
+  </div>  
+  <a href="html.component.html">Explore all your apps &nbsp;<i class='fa fa-arrow-right'></i></a>
+  <br><br>
+
+  <h3 style="display: inline-block;">Documents</h3>
+  <div style="float: right;margin-left: 8%;">
+    <button class="up"><i class="material-icons" style="font-size:18px;background-color: white;">vertical_align_top</i>Upload and open</button>
+    <div class="new">
+      <select class="new" name="new">
+        <option value=" ">New</option>
+        <option value="office"></option>
+        <option value="other"></option>
+      </select>
+    </div>
+  </div>
+  <div class="doc">
+    <button class="btn1 active" (click)="recent()">Recent</button>
+    <button class="btn1" (click)="pinned()">Pinned</button>
+    <button class="btn1" (click)="pinned()">Shared with me</button>
+    <button class="btn1" (click)="pinned()">Discover</button>
+  </div>  
+  <table *ngIf="disdoc" style="width:100%">
+    <thead>
+      <th><i class="fa fa-file-o"></i></th>
+      <th>Name</th>
+      <th>Last opened by you</th>
+      <th>Sharing</th>
+      <th>Activity</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of file" (click)="showicons(f)" class="tab edit_hover_class">
+        <td><img src="https://img.icons8.com/color/48/000000/ms-excel.png"/></td>
+        <td>{{f.name}}
+          <button class="bg"><i class="fa fa-ellipsis-v bg"></i>&nbsp;&nbsp;</button>         
+          <button class="bg"><i class='fa fa-map-pin bg'></i>&nbsp;&nbsp;</button>
+          <button class="bg"><i class='fa fa-share-square-o bg'></i></button>
+        </td>
+        <td>{{f.date}}</td>
+        <td>{{f.sharing}}</td>
+        <td>{{f.activity}}</td>  
+      </tr>
+      <div class="clr"></div>
+    </tbody>
+  </table>
+  <div *ngIf="!disdoc">
+    No Files
+    <img src="/assets/nofile.png">
+  </div>
+  <button class="btn1" style="display: inline-block;margin: 0%;">show more<i class='fa fa-angle-down'></i></button>
+  <a href="html.component.html" style="float: right;margin-top: 1%;">See more in OneDrive&nbsp;<i class='fa fa-arrow-right'></i></a>  
+  <div class="container">
+    <div id="leftside">
+      <h3>OneDrive</h3>
+      <h4>Recent folders</h4>
+      <table *ngIf="disonedrive">
+        <thead>
+          <th>Name</th>
+          <th>Last opened by you</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of file">
+            <td><i class="fa fa-folder" style="font-size:24px"></i>&nbsp;{{f.name}}</td>
+            <td>{{f.date}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <a href="html.component.html">Go to OneDrive&nbsp;<i class='fa fa-arrow-right'></i></a>
+    </div>
+    <div id="rightside">
+      <h3>SharePoint</h3>
+      <div>
+        <button class="btn active" (click)="frequent()">Frequent sites</button>
+        <button class="btn" (click)="following()">Following</button>
+      </div>  
+
+      <table *ngIf="disshare">
+        <thead>
+          <th>Name</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of file">
+            <td><a style="cursor: pointer;"><label id="first">{{firstletter(f.name)}}</label>&nbsp;&nbsp;&nbsp;{{f.name}}</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="!disshare">
+        No Files
+        <img src="/assets/nofile.png">
+      </div>
+      <br>
+      <a href="html.component.html">Go to Shared &nbsp;<i class='fa fa-arrow-right'></i></a>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <button style="background-color: black;color: white;"><i class="material-icons" style="font-size: 15px;color:white;background-color: black;">feedback</i>&nbsp;FeedBack</button>
+  <button style="background-color: tomato;color: white;"><i class="fa fa-question-circle" style="background-color: tomato;"></i>&nbsp;Need Help&nbsp;<i class="fa fa-question" style="background-color: tomato;"></i></button>
+</div>
+

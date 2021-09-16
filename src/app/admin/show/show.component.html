@@ -1,0 +1,8 @@
+<h4>Users Details</h4>
+<div>{{userdata.id}}</div>
+<div>{{userdata.name}}</div>
+<div>{{userdata.username}}</div>
+<div>{{userdata.password}}</div>
+<button class="btn btn-primary" routerLink="../addedit" [queryParams]="{ id: userdata.id,action:'edit'}">Edit</button>&nbsp;
+<button class="btn btn-primary" routerLink=".." (click)="deluser(userdata.id)">Delete</button>&nbsp;
+<button class="btn btn-primary" (click)="back()">back</button><br><br>
